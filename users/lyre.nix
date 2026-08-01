@@ -5,6 +5,6 @@
   users.users."lyre" = {
     isNormalUser = true;
     description = "Lyre";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "dialout" ];
   };
 }
