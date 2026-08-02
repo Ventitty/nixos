@@ -14,6 +14,7 @@
     python3
     zlib
     platformio
+    alacritty
   ];
 
   programs.git = {
@@ -32,6 +33,7 @@
       "kwinrc" = {
         "Desktops" = {
           "Number" = 10;
+          "Rows" = 2;
         };
       };
     };
@@ -67,6 +69,16 @@
 
         "Switch to Desktop 10" = "Meta+à";
         "Window to Desktop 10" = "Meta+0";
+
+        "Window Close" = "Meta+Q";
+      };
+
+      "org.kde.krunner.desktop" = {
+        "_launch" = "Meta+Space";
+      };
+
+      "Alacritty.desktop" = {
+        "_launch" = "Meta+Return";
       };
     };
   };
