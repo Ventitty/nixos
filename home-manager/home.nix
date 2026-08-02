@@ -46,7 +46,20 @@
     autoEnable = true;
     flavor = "mocha";
     accent = "mauve";
+
+    plasma.enable = true;
+    cursors.enable = true;
+    kvantum.enable = true;
+    gtk.enable = true;
   };
+
+   qt = {
+    enable = true;
+    platformTheme.name = "kvantum";
+    style.name = "kvantum";
+  };
+
+  gtk.enable = true;
 
   programs.plasma = {
     enable = true;
@@ -61,6 +74,9 @@
     };
 
     workspace = {
+      colorScheme = "CatppuccinMochaMauve";
+      lookAndFeel = "Catppuccin-Mocha-Mauve";
+      theme = "Catppuccin-Mocha-Mauve";
       iconTheme = "Papirus-Dark";
       wallpaper = ./../contents/wallpaper1.jpg;
     };
