@@ -45,11 +45,11 @@
     enable = true;
     flavor = "mocha";
     accent = "mauve";
-    plasma.enable = true; # Applique automatiquement le thème à KDE Plasma
   };
 
   programs.plasma = {
     enable = true;
+    catppuccin.enable = true;
 
     configFile = {
       "kwinrc" = {
