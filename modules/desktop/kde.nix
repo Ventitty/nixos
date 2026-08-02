@@ -19,9 +19,9 @@
     theme = "catppuccin-mocha";
   };
 
-  environment.systemPackages = [
+  environment.systemPackages = with pkgs; [
     catppuccin-sddm
-    (pkgs.writeTextDir "share/sddm/themes/catppuccin-mocha/theme.conf.user" ''
+    (writeTextDir "share/sddm/themes/catppuccin-mocha/theme.conf.user" ''
       [General]
       background=${./../../contents/wallpaper1.jpg}
     '')
