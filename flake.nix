@@ -33,6 +33,7 @@
                             plasma-manager.homeModules.plasma-manager
                             catppuccin.homeManagerModules.catppuccin
                         ];
+                        home-manager.backupFileExtension = "backup";
                         home-manager.users.lyre = import ./home-manager/home.nix;
                     }
                 ];
