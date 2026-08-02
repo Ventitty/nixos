@@ -10,12 +10,19 @@
     discord
     google-chrome
     mangohud
+    vscode
+    python3
+    zlib
+    platformio
   ];
 
   programs.git = {
      enable = true;
-     userName = "Lyre";
-     userEmail = "yvan.fedaouche@gmail.com";
+
+     settings.user = {
+      name = "Lyre";
+      email = "yvan.fedaouche@gmail.com";
+     };
   };
 
   programs.home-manager.enable = true;
