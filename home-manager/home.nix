@@ -15,8 +15,6 @@
     zlib
     platformio
     alacritty
-
-    papirus-icon-theme
   ];
 
   programs.git = {
