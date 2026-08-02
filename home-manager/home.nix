@@ -52,20 +52,22 @@
           "Rows" = 2;
         };
       };
+      "kdeglobals" = {
+        "General" = {
+          "ColorScheme" = "CatppuccinMochaMauve";
+        };
+      };
+      "kwinrc" = {
+        "org.kde.kdecoration2" = {
+          "theme" = "CatppuccinMochaMauve";
+        };
+      };
     };
 
     workspace = {
       lookAndFeel = "Catppuccin-Mocha-Mauve";
       iconTheme = "Papirus-Dark";
       wallpaper = ./../contents/wallpaper1.jpg;
-    };
-
-    style = {
-      theme = "CatppuccinMochaMauve";
-      colorScheme = "CatppuccinMochaMauve";
-      windowDecoration = {
-        theme = "CatppuccinMochaMauve";
-      };
     };
 
     shortcuts = {
