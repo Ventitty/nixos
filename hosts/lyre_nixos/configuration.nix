@@ -28,6 +28,7 @@
   programs.nix-ld.enable = true;
   environment.systemPackages = with pkgs; [
     vim
+    catppuccin-sddm
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

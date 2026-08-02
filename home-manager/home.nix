@@ -15,6 +15,9 @@
     zlib
     platformio
     alacritty
+
+    catppuccin-kde
+    papirus-icon-theme
   ];
 
   programs.git = {
@@ -24,6 +27,19 @@
       name = "Lyre";
       email = "yvan.fedaouche@gmail.com";
      };
+  };
+
+  programs.alacritty = {
+    enable = true;
+    settings = {
+      general.import = [
+        "${pkgs.alacritty-theme}/catppuccin_mocha.toml"
+      ];
+      window = {
+        opacity = 0.9;
+        padding = { x = 10; y = 10; };
+      };
+    };
   };
 
   programs.plasma = {
@@ -36,6 +52,11 @@
           "Rows" = 2;
         };
       };
+    };
+
+    workspace = {
+      lookAndFeel = "Catppuccin-Mocha-Mauve";
+      iconTheme = "Papirus-Dark";
     };
 
     shortcuts = {
