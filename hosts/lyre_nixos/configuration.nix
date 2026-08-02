@@ -28,13 +28,6 @@
   programs.nix-ld.enable = true;
   environment.systemPackages = with pkgs; [
     vim
-    (catppuccin-sddm.override {
-      flavor = "mocha";
-      font = "Noto Sans";
-      fontSize = "9";
-      background = "${./../../contents/wallpaper1.jpg}"; # optionnel: ton wallpaper en fond de login
-      loginBackground = true;
-    })
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

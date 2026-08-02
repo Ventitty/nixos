@@ -15,7 +15,23 @@
     zlib
     platformio
     alacritty
+    nordic
   ];
+
+  let
+    nordic-kde = pkgs.fetchFromGitHub {
+      owner = "EliverLara";
+      repo = "Nordic";
+      rev = "master";
+      sha256 = pkgs.lib.fakeSha256; # remplace par le vrai hash après le premier build (l'erreur Nix te le donnera)
+    };
+  in
+  {
+    home.file.".local/share/color-schemes/Nordic.colors".source = "${nordic-kde}/kde/color-scheme/Nordic.colors";
+    home.file.".local/share/plasma/desktoptheme/Nordic".source = "${nordic-kde}/kde/plasma";
+    home.file.".local/share/aurorae/themes/Nordic".source = "${nordic-kde}/kde/aurorae/Nordic";
+    home.file.".local/share/konsole/Nordic.colorscheme".source = "${nordic-kde}/konsole/Nordic.colorscheme";
+  }
 
   programs.git = {
      enable = true;
@@ -29,9 +45,6 @@
   programs.alacritty = {
     enable = true;
     settings = {
-      general.import = [
-        "${pkgs.alacritty-theme}/catppuccin_mocha.toml"
-      ];
       window = {
         opacity = 0.9;
         padding = { x = 10; y = 10; };
@@ -39,22 +52,19 @@
     };
   };
 
-  catppuccin = {
-    enable = true;
-    autoEnable = true;
-    flavor = "mocha";
-    accent = "mauve";
-  };
-
-   qt = {
-    enable = true;
-    platformTheme.name = "kvantum";
-    style.name = "kvantum";
-  };
+  programs.alacritty.settings.general.import = [
+    "${pkgs.alacritty-theme}/nord.toml"
+  ];
 
   gtk = {
     enable = true;
+    theme = {
+      name = "Nordic";
+      package = pkgs.nordic;
+    };
   };
+
+
 
   programs.plasma = {
     enable = true;
@@ -69,10 +79,8 @@
     };
 
     workspace = {
-      colorScheme = "CatppuccinMochaMauve";
-      lookAndFeel = "Catppuccin-Mocha-Mauve";
-      theme = "Catppuccin-Mocha-Mauve";
-      iconTheme = "Papirus-Dark";
+      colorScheme = "Nordic";
+      theme = "Nordic";
       wallpaper = ./../contents/wallpaper1.jpg;
     };
 

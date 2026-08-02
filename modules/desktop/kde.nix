@@ -8,7 +8,7 @@
   # Enable the KDE Plasma Desktop Environment.
  services.displayManager.sddm = {
     enable = true;
-    theme = "catppuccin-mocha";
+    theme = "breeze";
   };
 
   services.desktopManager.plasma6.enable = true;
