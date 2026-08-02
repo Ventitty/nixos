@@ -46,10 +46,6 @@
     autoEnable = true;
     flavor = "mocha";
     accent = "mauve";
-
-    plasma.enable = true;
-    cursors.enable = true;
-    kvantum.enable = true;
   };
 
    qt = {
