@@ -50,7 +50,6 @@
     plasma.enable = true;
     cursors.enable = true;
     kvantum.enable = true;
-    gtk.enable = true;
   };
 
    qt = {
@@ -59,7 +58,14 @@
     style.name = "kvantum";
   };
 
-  gtk.enable = true;
+  gtk = {
+    enable = true;
+    catppuccin = {
+      enable = true;
+      flavor = "mocha";
+      accent = "mauve";
+    };
+  };
 
   programs.plasma = {
     enable = true;
