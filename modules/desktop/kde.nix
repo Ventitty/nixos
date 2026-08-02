@@ -6,19 +6,18 @@
   services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
+ services.displayManager.sddm = {
+    enable = true;
+    theme = "catppuccin-mocha";
+    package = pkgs.kdePackages.sddm;
+  };
+
   services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "fr";
     variant = "azerty";
-  };
-
-  services.displayManager.sddm = {
-    enable = true;
-    theme = "catppuccin-mocha";
-    package = pkgs.kdePackages.sddm;
   };
 
   environment.systemPackages = with pkgs; [
