@@ -15,13 +15,8 @@
     variant = "azerty";
   };
 
-  services.displayManager.sddm = {
-    theme = "catppuccin-mocha";
-  };
-
   environment.systemPackages = with pkgs; [
-    catppuccin-sddm
-    (writeTextDir "share/sddm/themes/catppuccin-mocha/theme.conf.user" ''
+    (writeTextDir "share/sddm/themes/breeze/theme.conf.user" ''
       [General]
       background=${./../../contents/wallpaper1.jpg}
     '')

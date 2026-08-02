@@ -43,13 +43,13 @@
 
   catppuccin = {
     enable = true;
+    autoEnable = true;
     flavor = "mocha";
     accent = "mauve";
   };
 
   programs.plasma = {
     enable = true;
-    catppuccin.enable = true;
 
     configFile = {
       "kwinrc" = {
