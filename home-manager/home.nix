@@ -1,5 +1,12 @@
 { config, pkgs, ... }:
-
+let
+    nordic-kde = pkgs.fetchFromGitHub {
+      owner = "EliverLara";
+      repo = "Nordic";
+      rev = "master";
+      sha256 = pkgs.lib.fakeSha256; # remplace par le vrai hash après le premier build (l'erreur Nix te le donnera)
+    };
+in
 {
   home.username = "lyre";
   home.homeDirectory = "/home/lyre";
@@ -18,20 +25,10 @@
     nordic
   ];
 
-  let
-    nordic-kde = pkgs.fetchFromGitHub {
-      owner = "EliverLara";
-      repo = "Nordic";
-      rev = "master";
-      sha256 = pkgs.lib.fakeSha256; # remplace par le vrai hash après le premier build (l'erreur Nix te le donnera)
-    };
-  in
-  {
-    home.file.".local/share/color-schemes/Nordic.colors".source = "${nordic-kde}/kde/color-scheme/Nordic.colors";
-    home.file.".local/share/plasma/desktoptheme/Nordic".source = "${nordic-kde}/kde/plasma";
-    home.file.".local/share/aurorae/themes/Nordic".source = "${nordic-kde}/kde/aurorae/Nordic";
-    home.file.".local/share/konsole/Nordic.colorscheme".source = "${nordic-kde}/konsole/Nordic.colorscheme";
-  }
+  home.file.".local/share/color-schemes/Nordic.colors".source = "${nordic-kde}/kde/color-scheme/Nordic.colors";
+  home.file.".local/share/plasma/desktoptheme/Nordic".source = "${nordic-kde}/kde/plasma";
+  home.file.".local/share/aurorae/themes/Nordic".source = "${nordic-kde}/kde/aurorae/Nordic";
+  home.file.".local/share/konsole/Nordic.colorscheme".source = "${nordic-kde}/konsole/Nordic.colorscheme";
 
   programs.git = {
      enable = true;
