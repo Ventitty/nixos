@@ -13,9 +13,10 @@
             inputs.nixpkgs.follows = "nixpkgs";
             inputs.home-manager.follows = "home-manager";
         };
+        catppuccin.url = "github:catppuccin/nix";
     };
 
-    outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, plasma-manager, ... }@inputs: {
+    outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, plasma-manager, catppuccin, ... }@inputs: {
         nixosConfigurations = {
             lyre_nixos = nixpkgs.lib.nixosSystem {
                 system = "x86_64-linux";
@@ -28,7 +29,10 @@
                         home-manager.useGlobalPkgs = true;
                         home-manager.useUserPackages = true;
                         home-manager.extraSpecialArgs = { inherit inputs; };
-                        home-manager.sharedModules = [ plasma-manager.homeModules.plasma-manager ];
+                        home-manager.sharedModules = [
+                            plasma-manager.homeModules.plasma-manager
+                            catppuccin.homeManagerModules.catppuccin
+                        ];
                         home-manager.users.lyre = import ./home-manager/home.nix;
                     }
                 ];

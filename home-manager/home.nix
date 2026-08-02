@@ -16,7 +16,6 @@
     platformio
     alacritty
 
-    catppuccin-kde
     papirus-icon-theme
   ];
 
@@ -42,6 +41,13 @@
     };
   };
 
+  catppuccin = {
+    enable = true;
+    flavor = "mocha";
+    accent = "mauve";
+    plasma.enable = true; # Applique automatiquement le thème à KDE Plasma
+  };
+
   programs.plasma = {
     enable = true;
 
@@ -52,20 +58,9 @@
           "Rows" = 2;
         };
       };
-      "kdeglobals" = {
-        "General" = {
-          "ColorScheme" = "CatppuccinMochaMauve";
-        };
-      };
-      "kwinrc" = {
-        "org.kde.kdecoration2" = {
-          "theme" = "CatppuccinMochaMauve";
-        };
-      };
     };
 
     workspace = {
-      lookAndFeel = "Catppuccin-Mocha-Mauve";
       iconTheme = "Papirus-Dark";
       wallpaper = ./../contents/wallpaper1.jpg;
     };
