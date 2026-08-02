@@ -4,7 +4,7 @@ let
       owner = "EliverLara";
       repo = "Nordic";
       rev = "master";
-      sha256 = pkgs.lib.fakeSha256; # remplace par le vrai hash après le premier build (l'erreur Nix te le donnera)
+      sha256 = "sha256-dQ9xc1kXqc4phCObAwWwHH//vm6NK6z61ieYV3NWWQE="; # remplace par le vrai hash après le premier build (l'erreur Nix te le donnera)
     };
 in
 {
@@ -77,7 +77,12 @@ in
 
     workspace = {
       colorScheme = "Nordic";
-      theme = "Nordic";
+      lookAndFeel = "Nordic";
+      windowDecorations = {
+        library = "org.kde.kwin.aurorae";
+        theme = "__aurorae__svg__Nordic";
+      };
+      iconTheme = "Nordic-darker";
       wallpaper = ./../contents/wallpaper1.jpg;
     };
 
