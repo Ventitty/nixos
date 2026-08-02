@@ -57,6 +57,7 @@
     workspace = {
       lookAndFeel = "Catppuccin-Mocha-Mauve";
       iconTheme = "Papirus-Dark";
+      wallpaper = ./../contents/wallpaper1.jpg;
     };
 
     shortcuts = {
