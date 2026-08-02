@@ -15,7 +15,7 @@
         };
     };
 
-    outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }@inputs: {
+    outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, plasma-manager, ... }@inputs: {
         nixosConfigurations = {
             lyre_nixos = nixpkgs.lib.nixosSystem {
                 system = "x86_64-linux";
