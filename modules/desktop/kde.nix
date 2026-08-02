@@ -22,7 +22,7 @@
   environment.systemPackages = [
     (pkgs.writeTextDir "share/sddm/themes/catppuccin-mocha/theme.conf.user" ''
       [General]
-      background=${./../../contents/wallpaper.jpg}
+      background=${./../../contents/wallpaper1.jpg}
     '')
   ];
 }
