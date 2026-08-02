@@ -60,6 +60,14 @@
       wallpaper = ./../contents/wallpaper1.jpg;
     };
 
+    style = {
+      theme = "CatppuccinMochaMauve";
+      colorScheme = "CatppuccinMochaMauve";
+      windowDecoration = {
+        theme = "CatppuccinMochaMauve";
+      };
+    };
+
     shortcuts = {
       "kwin" = {
         "Switch to Desktop 1" = "Meta+&";

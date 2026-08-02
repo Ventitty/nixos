@@ -20,6 +20,7 @@
   };
 
   environment.systemPackages = [
+    catppuccin-sddm
     (pkgs.writeTextDir "share/sddm/themes/catppuccin-mocha/theme.conf.user" ''
       [General]
       background=${./../../contents/wallpaper1.jpg}
