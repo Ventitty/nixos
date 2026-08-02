@@ -9,7 +9,6 @@
  services.displayManager.sddm = {
     enable = true;
     theme = "catppuccin-mocha";
-    package = pkgs.kdePackages.sddm;
   };
 
   services.desktopManager.plasma6.enable = true;

@@ -56,11 +56,6 @@
 
   gtk = {
     enable = true;
-    catppuccin = {
-      enable = true;
-      flavor = "mocha";
-      accent = "mauve";
-    };
   };
 
   programs.plasma = {
