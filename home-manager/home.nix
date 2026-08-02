@@ -77,7 +77,6 @@ in
 
     workspace = {
       colorScheme = "Nordic";
-      lookAndFeel = "Nordic";
       windowDecorations = {
         library = "org.kde.kwin.aurorae";
         theme = "__aurorae__svg__Nordic";
