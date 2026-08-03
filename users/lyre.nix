@@ -7,4 +7,8 @@
     description = "Lyre";
     extraGroups = [ "networkmanager" "wheel" "dialout" ];
   };
+
+  services.udev.packages = with pkgs; [
+    openfpgaloader
+  ];
 }
