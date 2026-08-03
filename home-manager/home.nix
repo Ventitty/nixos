@@ -82,7 +82,7 @@ in
         theme = "__aurorae__svg__Nordic";
       };
       iconTheme = "Nordic-darker";
-      wallpaper = ./../contents/wallpaper1.jpg;
+      wallpaper = ../contents/wallpaper1.jpg;
     };
 
     shortcuts = {
