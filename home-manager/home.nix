@@ -29,6 +29,7 @@ in
   home.file.".local/share/plasma/desktoptheme/Nordic".source = "${nordic-kde}/kde/plasma";
   home.file.".local/share/aurorae/themes/Nordic".source = "${nordic-kde}/kde/aurorae/Nordic";
   home.file.".local/share/konsole/Nordic.colorscheme".source = "${nordic-kde}/konsole/Nordic.colorscheme";
+  home.file.".config/wallpaper.jpg".source = ./../contents/wallpaper1.jpg;
 
   programs.git = {
      enable = true;
@@ -82,7 +83,7 @@ in
         theme = "__aurorae__svg__Nordic";
       };
       iconTheme = "Nordic-darker";
-      wallpaper = ../contents/wallpaper1.jpg;
+      wallpaper = "${config.home.homeDirectory}/.config/wallpaper.jpg";
     };
 
     shortcuts = {
