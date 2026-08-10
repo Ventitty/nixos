@@ -26,8 +26,12 @@
 
   nixpkgs.config.allowUnfree = true;
   programs.nix-ld.enable = true;
+  virtualisation.libvirtd.enable = true;
   environment.systemPackages = with pkgs; [
     vim
+    qemu_kvm
+    libvirt
+    virt-manager
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

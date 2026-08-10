@@ -5,7 +5,7 @@
   users.users."lyre" = {
     isNormalUser = true;
     description = "Lyre";
-    extraGroups = [ "networkmanager" "wheel" "dialout" ];
+    extraGroups = [ "networkmanager" "wheel" "dialout" "libvirtd" ];
   };
 
   services.udev.packages = with pkgs; [
