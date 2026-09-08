@@ -25,6 +25,11 @@ in
     nordic
 
     stm32cubemx
+    cmake
+    gcc
+    glibc
+    gdb
+    picocom
   ];
 
   home.file.".local/share/color-schemes/Nordic.colors".source = "${nordic-kde}/kde/color-scheme/Nordic.colors";
