@@ -23,6 +23,8 @@ in
     platformio
     alacritty
     nordic
+
+    stm32cubemx
   ];
 
   home.file.".local/share/color-schemes/Nordic.colors".source = "${nordic-kde}/kde/color-scheme/Nordic.colors";
