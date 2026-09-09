@@ -14,9 +14,11 @@
             inputs.home-manager.follows = "home-manager";
         };
         stm32cubeide.url = "path:./modules/apps/stm32cubeide";
+        stlink-server.url = "path:./modules/apps/stlink";
+        probe-rs-rules.url = "github:jneem/probe-rs-rules";
     };
 
-    outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, plasma-manager, stm32cubeide, ... }@inputs: {
+    outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, plasma-manager, stm32cubeide, stlink-server, probe-rs-rules... }@inputs: {
         nixosConfigurations = {
             lyre_nixos = nixpkgs.lib.nixosSystem {
                 system = "x86_64-linux";
@@ -37,6 +39,8 @@
                     }
 
                     stm32cubeide.nixosModules.default
+                    { nixpkgs.overlays = [ stlink-server.overlays.default ]; }
+                    probe-rs-rules.nixosModules."x86_64-linux".default # STM32
                 ];
             };
         };

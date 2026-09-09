@@ -37,6 +37,10 @@
     stlink
     stlink-gui
     stlink-tool
+    stlink-server
+    gcc
+    gdb
+    cmake
 
     gcc
     gdb
