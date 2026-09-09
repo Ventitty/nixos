@@ -13,7 +13,7 @@
             inputs.nixpkgs.follows = "nixpkgs";
             inputs.home-manager.follows = "home-manager";
         };
-        stm32cubeide.url = "path:./modules/apps/stm32cubeIde";
+        stm32cubeide.url = "path:./modules/apps/stm32cubeide";
     };
 
     outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, plasma-manager, stm32cubeide, ... }@inputs: {
