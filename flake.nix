@@ -18,7 +18,7 @@
         probe-rs-rules.url = "github:jneem/probe-rs-rules";
     };
 
-    outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, plasma-manager, stm32cubeide, stlink-server, probe-rs-rules... }@inputs: {
+    outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, plasma-manager, stm32cubeide, stlink-server, probe-rs-rules, ... }@inputs: {
         nixosConfigurations = {
             lyre_nixos = nixpkgs.lib.nixosSystem {
                 system = "x86_64-linux";
