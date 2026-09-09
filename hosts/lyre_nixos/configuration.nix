@@ -54,6 +54,8 @@
       enable = true;
   };
 
+  hardware.saleae-logic.enable = true;
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   system.stateVersion = "26.05"; # Did you read the comment?
 
