@@ -93,6 +93,12 @@ in
       wallpaper = "${config.home.homeDirectory}/.config/wallpaper.jpg";
     };
 
+    kscreenlocker = {
+      appearance = {
+        wallpaper = "${config.home.homeDirectory}/.config/wallpaper.jpg";
+      };
+    };
+
     shortcuts = {
       "kwin" = {
         "Switch to Desktop 1" = "Meta+&";
