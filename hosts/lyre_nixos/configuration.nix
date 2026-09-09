@@ -36,7 +36,8 @@
     stm32cubemx
     stlink
     stlink-gui
-    stlink-server
+    stlink-tool
+
     gcc
     gdb
     cmake

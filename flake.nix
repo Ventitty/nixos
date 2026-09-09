@@ -35,6 +35,8 @@
                         home-manager.backupFileExtension = "backup";
                         home-manager.users.lyre = import ./home-manager/home.nix;
                     }
+
+                    stm32cubeide.nixosModules.default
                 ];
             };
         };
