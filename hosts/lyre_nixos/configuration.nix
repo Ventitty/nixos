@@ -32,7 +32,26 @@
     qemu_kvm
     libvirt
     virt-manager
+
+    stm32cubemx
+    stlink
+    stlink-gui
+    stlink-server
+    gcc
+    gdb
+    cmake
   ];
+
+  services.udev.packages = [
+    pkgs.usb-blaster-udev-rules
+    pkgs.stlink
+    pkgs.cdrtools
+    pkgs.dvdplusrwtools
+  ];
+
+  programs.stm32cubeide = {
+      enable = true;
+  };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   system.stateVersion = "26.05"; # Did you read the comment?
