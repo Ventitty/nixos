@@ -58,6 +58,8 @@
       enable = true;
   };
 
+  programs.ssh.pacakge = pkgs.openssh_gssapi;
+
   hardware.saleae-logic.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
