@@ -45,6 +45,8 @@
     gcc
     gdb
     cmake
+    sshfs
+    krb5
   ];
 
   services.udev.packages = [
@@ -58,7 +60,15 @@
       enable = true;
   };
 
-  programs.ssh.pacakge = pkgs.openssh_gssapi;
+  nixpkgs.overlays = [
+  (final: prev: {
+    sshfs = prev.sshfs.override {
+      callPackage = prev.newScope {
+        openssh = pkgs.openssh_gssapi;
+      };
+    };
+  })
+];
 
   hardware.saleae-logic.enable = true;
 
