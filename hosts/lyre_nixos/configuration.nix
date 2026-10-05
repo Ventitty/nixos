@@ -27,6 +27,16 @@
   nixpkgs.config.allowUnfree = true;
   programs.nix-ld.enable = true;
   virtualisation.libvirtd.enable = true;
+
+  programs.ssh.package = pkgs.openssh_gssapi;
+  nixpkgs.overlays = [
+    (final: prev: {
+      sshfs = prev.sshfs.override {
+        openssh = pkgs.openssh_gssapi;
+      };
+    })
+  ];
+
   environment.systemPackages = with pkgs; [
     vim
     qemu_kvm
@@ -46,6 +56,7 @@
     gdb
     cmake
     krb5
+    sshfs
   ];
 
   services.udev.packages = [
@@ -58,16 +69,6 @@
   programs.stm32cubeide = {
       enable = true;
   };
-
-  nixpkgs.overlays = [
-  (final: prev: {
-    sshfs = prev.sshfs.override {
-      callPackage = prev.newScope {
-        openssh = pkgs.openssh_gssapi;
-      };
-    };
-  })
-];
 
   hardware.saleae-logic.enable = true;
 
