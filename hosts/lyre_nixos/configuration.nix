@@ -45,7 +45,6 @@
     gcc
     gdb
     cmake
-    sshfs
     krb5
   ];
 
