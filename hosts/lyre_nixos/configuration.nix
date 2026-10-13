@@ -80,6 +80,11 @@
           "ros:JR95vUYsShSqfA1VTYoFt1Nz6uXasm5QrcOsGry9f6Q="
   ];
 
+  swapDevices = [{
+    device = "/var/lib/swapfile";
+    size = 16*1024; # 16 GiB
+  }];
+
   hardware.saleae-logic.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
