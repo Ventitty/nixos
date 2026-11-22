@@ -1,12 +1,17 @@
-{ pkgs, ... }:
-
 {
-  networking.networkmanager.enable = true;
+  flake.modules.nixos.network =
+    { pkgs, ... }:
+    {
+      networking.networkmanager.enable = true;
 
-  # SSH avec support Kerberos (GSSAPI) ; sshfs est recompilé dans l'overlay
-  programs.ssh.package = pkgs.openssh_gssapi;
-  environment.systemPackages = with pkgs; [
-    krb5
-    sshfs
-  ];
+      # SSH et sshfs avec support Kerberos (GSSAPI)
+      programs.ssh.package = pkgs.openssh_gssapi;
+      nixpkgs.overlays = [
+        (final: prev: { sshfs = prev.sshfs.override { openssh = final.openssh_gssapi; }; })
+      ];
+      environment.systemPackages = with pkgs; [
+        krb5
+        sshfs
+      ];
+    };
 }

@@ -1,11 +1,18 @@
-{ pkgs, ... }:
+{ config, ... }:
 
+let
+  inherit (config.my) username;
+in
 {
-  virtualisation.libvirtd.enable = true;
-  programs.virt-manager.enable = true;
+  flake.modules.nixos.virtualisation =
+    { pkgs, ... }:
+    {
+      virtualisation.libvirtd.enable = true;
+      programs.virt-manager.enable = true;
 
-  # qemu en ligne de commande (libvirtd ne l'ajoute pas au PATH)
-  environment.systemPackages = [ pkgs.qemu_kvm ];
+      # qemu en ligne de commande (libvirtd ne l'ajoute pas au PATH)
+      environment.systemPackages = [ pkgs.qemu_kvm ];
 
-  users.users.lyre.extraGroups = [ "libvirtd" ];
+      users.users.${username}.extraGroups = [ "libvirtd" ];
+    };
 }
