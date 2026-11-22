@@ -54,25 +54,27 @@ in
           "org.kde.krunner.desktop"._launch = "Meta+Space";
         };
 
-        panels = {
-          location = "bottom";
-          widgets = [
-            { kickoff.icon = "${builtins.path { path = ../../contents/icon1.png; name = "icon1.png"; }}"; }
-            "org.kde.plasma.pager"
-            {
-              iconTasks.launchers = [
-                "applications:systemsettings.desktop"
-                "applications:org.kde.dolphin.desktop"
-                "applications:google-chrome.desktop"
-                "applications:Alacritty.desktop"
-              ];
-            }
-            "org.kde.plasma.marginsseparator"
-            "org.kde.plasma.systemtray"
-            "org.kde.plasma.digitalclock"
-            "org.kde.plasma.showdesktop"
-          ];
-        };
+        panels = [
+          {
+            location = "bottom";
+            widgets = [
+              { kickoff.icon = "${builtins.path { path = ../../contents/icon1.png; name = "icon1.png"; }}"; }
+              "org.kde.plasma.pager"
+              {
+                iconTasks.launchers = [
+                  "applications:systemsettings.desktop"
+                  "applications:org.kde.dolphin.desktop"
+                  "applications:google-chrome.desktop"
+                  "applications:Alacritty.desktop"
+                ];
+              }
+              "org.kde.plasma.marginsseparator"
+              "org.kde.plasma.systemtray"
+              "org.kde.plasma.digitalclock"
+              "org.kde.plasma.showdesktop"
+            ];
+          }
+        ];
       };
     };
 }
