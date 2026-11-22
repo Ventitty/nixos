@@ -59,7 +59,6 @@ in
             location = "bottom";
             widgets = [
               { kickoff.icon = "${builtins.path { path = ../../contents/icon1.png; name = "icon1.png"; }}"; }
-              "org.kde.plasma.pager"
               {
                 iconTasks.launchers = [
                   "applications:systemsettings.desktop"
