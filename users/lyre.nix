@@ -1,14 +1,15 @@
-{ config, pkgs, ... }:
-
 {
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users."lyre" = {
+  # Mot de passe à définir avec `passwd`.
+  # Les groupes propres à un usage sont ajoutés par les modules concernés
+  # (dialout dans embedded.nix, libvirtd dans virtualisation.nix).
+  users.users.lyre = {
     isNormalUser = true;
     description = "Lyre";
-    extraGroups = [ "networkmanager" "wheel" "dialout" "libvirtd" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
   };
 
-  services.udev.packages = with pkgs; [
-    openfpgaloader
-  ];
+  home-manager.users.lyre = import ../home;
 }

@@ -1,28 +1,20 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
-  # Enable the X11 windowing system.
-  # You can disable this if you're only using the Wayland session.
+  # Session X11 conservée en secours (Plasma 6 tourne par défaut sous Wayland)
   services.xserver.enable = true;
 
-  # Enable the KDE Plasma Desktop Environment.
- services.displayManager.sddm = {
+  services.displayManager.sddm = {
     enable = true;
     theme = "breeze";
   };
-
   services.desktopManager.plasma6.enable = true;
 
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "fr";
-    variant = "azerty";
-  };
-
-  environment.systemPackages = with pkgs; [
-    (writeTextDir "share/sddm/themes/breeze/theme.conf.user" ''
+  # Fond d'écran de l'écran de connexion
+  environment.systemPackages = [
+    (pkgs.writeTextDir "share/sddm/themes/breeze/theme.conf.user" ''
       [General]
-      background=${./../../contents/wallpaper1.jpg}
+      background=${../../contents/wallpaper1.jpg}
     '')
   ];
 }
