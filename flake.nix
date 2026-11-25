@@ -20,6 +20,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
+
+    esp-dev.url = "github:mirrexagon/nixpkgs-esp-dev";
   };
 
   # Chaque fichier .nix de ./modules est un module flake-parts, importé

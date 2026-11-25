@@ -20,6 +20,7 @@
 
       # Applications
       embedded
+      esp32
       steam
       tools
       virtualisation
