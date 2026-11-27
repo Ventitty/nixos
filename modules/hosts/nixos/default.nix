@@ -2,7 +2,7 @@
 { config, inputs, ... }:
 
 {
-  flake.nixosConfigurations.lyre_nixos = inputs.nixpkgs.lib.nixosSystem {
+  flake.nixosConfigurations.nixos = inputs.nixpkgs.lib.nixosSystem {
     modules = with config.flake.modules.nixos; [
       # Système
       boot
